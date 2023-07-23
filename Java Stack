@@ -1,0 +1,17 @@
+import java.util.*;
+class Solution{
+	
+	public static void main(String []argh)
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		while (sc.hasNext()) {
+			String ac=sc.next();
+            while(ac.length()!=(ac=ac.replaceAll("\\(\\)|\\[\\]|\\{\\}", "")).length());
+        System.out.println(ac.isEmpty());    
+            
+            //Complete the code
+		}
+		
+	}
+}
