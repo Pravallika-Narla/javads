@@ -1,0 +1,29 @@
+    import java.util.*;
+    public class test {
+        public static void main(String[] args) {
+            Scanner in = new Scanner(System.in);
+            Deque<Integer> deque = new ArrayDeque<>();
+            HashSet<Integer> set = new HashSet<>();
+          
+            int j = in.nextInt();
+            int k = in.nextInt();
+            int high=Integer.MIN_VALUE;
+
+            for (int i = 0; i < j; i++) {
+                int b = in.nextInt();
+                deque.add(b);
+                set.add(b);
+                if(deque.size()==k){
+                    if(set.size()>high) high =set.size();
+                    int start=deque.remove();
+                    if(!deque.contains(start)) set.remove(start);
+                    
+                }
+                
+                
+
+               
+            }
+            System.out.println(high);
+        }
+    }
