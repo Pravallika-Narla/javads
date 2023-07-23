@@ -1,0 +1,23 @@
+class Solution {
+    public String longestPalindrome(String v) {
+       int s = 0, e = 0;
+       for(int j = 0; j < v.length(); j ++) {
+           char c = v.charAt(j);
+           int lt = j;
+           int rt = j;
+           while(lt >= 0 && v.charAt(lt) == c) lt --;
+           while(rt < v.length() && v.charAt(rt) == c) rt ++;
+           while(lt >= 0 && rt < v.length()) {
+               if(v.charAt(lt) != v.charAt(rt)) break;
+               lt --;
+               rt ++;
+           }
+           lt += 1;
+           if(e - s < rt - lt) {
+               s = lt;
+               e = rt;
+           }
+       } 
+       return v.substring(s, e);
+    }
+}
