@@ -1,0 +1,17 @@
+class Solution {
+    public ListNode swapPairs(ListNode head) {
+         if (head == null || head.next == null) {
+        return head;
+    }
+    
+    // get next node for recursion
+    ListNode nextNode1 = head.next;
+    
+    // Swap  current node and the next node
+    head.next = swapPairs(nextNode1.next);
+    nextNode1.next = head;
+    
+    // Return  new head 
+    return nextNode1;
+    }
+}
